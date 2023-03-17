@@ -1,0 +1,16 @@
+START
+READ INPUT "choosen restaurant"
+SHOW ListMenu WHERE Restaurant = "choosen restaurant"
+READ INPUT "choosen menu" with array CALCULATE "total price" FROM "choosen menu"
+READ INPUT "destination"
+CALCULATE "shipping cost WHERE TRACK IS FROM RestaurantLocation TO "destination"
+CALCULATE "total price ADDED "shipping cost"
+WRITE "is payment succed" = FALSE
+WHILE "is payment succed" = FALSE
+DO READ "payment"
+VALIDATE "payment"
+    IF "payment" IS SUCCED
+        SET "is payment succed" = TRUE CONTINUE TO Delivery ()
+    ELSE
+    GO TO LINE 9
+END 
